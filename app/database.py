@@ -6,7 +6,7 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
 
-URL_DATABASE = f'postgresql://{os.getenv("POSTGRES_USER")}:{os.getenv("POSTGRES_PASSWORD")}@localhost:5432/{os.getenv("POSTGRES_DB")}'
+URL_DATABASE = f'postgresql://{os.getenv("POSTGRES_USER")}:{os.getenv("POSTGRES_PASSWORD")}@{os.getenv("HOST")}:5432/{os.getenv("POSTGRES_DB")}'
 
 print(URL_DATABASE)
 engine = create_engine(URL_DATABASE)
